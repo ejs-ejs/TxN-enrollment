@@ -1,0 +1,123 @@
+\documentclass[
+  paper=a4,
+  fontsize=10pt,
+  parskip=full,
+  DIV=21,
+  BCOR=8mm,
+%  headinclude=true,
+   footinclude=true,
+  headheight=2pt,
+  footheight=1pt,
+%  headsepline=true,
+  footsepline=true
+]{scrartcl}
+
+
+
+\usepackage{agreement}
+
+
+\PrerenderUnicode{ą}
+\PrerenderUnicode{Ą}
+\PrerenderUnicode{č}
+\PrerenderUnicode{Č}
+\PrerenderUnicode{ę}
+\PrerenderUnicode{Ę}
+\PrerenderUnicode{ė}
+\PrerenderUnicode{Ė}
+\PrerenderUnicode{į}
+\PrerenderUnicode{Į}
+\PrerenderUnicode{ų}
+\PrerenderUnicode{Ų}
+\PrerenderUnicode{ū}
+\PrerenderUnicode{Ū}
+\PrerenderUnicode{ž}
+\PrerenderUnicode{Ž}
+
+
+% agreement info
+%------------------------------
+
+{{=<< >>=}}
+\setproperty{agreement}{number}{<< number >>}
+
+%\setproperty{agreement}{number}{0912345}
+%------------------------------
+
+
+% member's information
+%------------------------------
+
+%\setproperty{member}{Name}{Jonas Jonaitis}
+%\setproperty{member}{address}{Gatvė, namas, miestas}
+%\setproperty{member}{phone}{<< +370 650 123456 >>}
+%\setproperty{member}{email}{<< tikras@e.mailas >>}
+
+<<#member>>
+\setproperty{member}{Name}{<< Name >>}
+\setproperty{member}{address}{<< address >>}
+\setproperty{member}{phone}{<< phone >>}
+\setproperty{member}{email}{<< email >>}
+
+%------------------------------
+
+
+\title{Technariumo narystės sutartis NS-\getproperty{agreement}{number}}
+%\author{Technariumas}
+
+
+\setlength{\parskip}{2pt}
+
+
+\begin{document}
+
+\pagestyle{scrheadings}
+
+
+
+%------------------------------
+\include{organization}
+
+
+\maketitle
+
+%\centering \date, \getproperty{organization}{location}}
+
+
+\textbf{\getproperty{organization}{name}} ir 
+\textbf{\getproperty{member}{Name}}, toliau vadinamas „nariu“, sudarė šią sutartį:
+\section{Šalių teisės ir pareigos}
+
+\begin{enumerate}
+\item Narys gauna teisę naudotis VšĮ „Šviesos kūgiai“ administruojamų Technariumo dirbtuvių patalpomis ir jose esančia įranga.
+\item Narys įsipareigoja VšĮ „Šviesos kūgiai“ pateikti galiojantį elektroninio pašto adresą.
+\item Narys pasirenka norimą narystės lygį šios sutarties 1 priede. Keisti narystės lygį galima kartą per mėnesį, raštu pranešus atsakingam asmeniui.   
+\item Narys įsipareigoja apmokėti VšĮ „Šviesos kūgiai“ pateikiamas sąskaitas už nario pasirinktą narystės lygį per 15 d. nuo sąskaitos išsiuntimo. Sąskaitos nariams pateikiamos elektroniniu paštu.
+\item Narys įsipareigoja pasirašytinai susipažinti su VšĮ „Šviesos kūgiai“ patvirtintomis naudojimosi Technariumo patalpomis ir įranga taisyklėmis bei atskirais saugos reikalavimais bei jų laikytis. 
+\end{enumerate}
+
+\section{Sutarties galiojimas}
+
+\begin{enumerate}
+\item Ši sutartis įsigalioja nuo jos pasirašymo datos.
+\item Sutartis gali būti nutraukta:
+\begin{enumerate}
+\item raštišku šalių susitarimu,
+\item vienai iš šalių prieš vieną mėnesį raštu įspėjus kitą šalį apie sutarties nutraukimą,
+\item vienašališkai nutraukta VšĮ ''Šviesos kūgiai'', jei narys grubiai ar pakartotinai pažeidžia dirbtuvių taisykles, nurodytas 1.5 punkte. Narys taip pat gali būti pašalintas visuotinio narių susirinkimo sprendimu.
+
+\item Nariui praleidus nario mokesčio mokėjimą daugiau, nei 45 kalendorines dienas ir nepateikus prašymo atidėti ar sumažinti mokesčio mokėjimą, taip pat nepratęsus narystės termino.
+
+\item Atsitikus nenumatytam įvykiui, dėl kurio nario narystė ar tolesnė dirbtuvių veikla tampa
+neįmanoma. Jei Technariumo dirbtuvių veikla dėl kokių nors priežasčių nebegali būti tęsiama, likusios narių mokesčių dalys yra jiems grąžinamos.
+\end{enumerate}  
+
+\end{enumerate} 
+
+
+\agreementParties
+%\myfooter
+
+%------------------------------
+
+\end{document}
