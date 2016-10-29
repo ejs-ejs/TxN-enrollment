@@ -49,14 +49,15 @@
 
 
 % koma hacks
-%\RequirePackage{scrhack}
+\RequirePackage{scrhack}
+
 
 % language
-%\RequirePackage{ucs}
-%\RequirePackage[T1]{fontenc}
-%\RequirePackage[utf8x]{inputenc}
-%\RequirePackage[lithuanian]{babel}
-%\selectlanguage{lithuanian}
+\RequirePackage{ucs}
+\RequirePackage[T1]{fontenc}
+\RequirePackage[utf8x]{inputenc}
+\RequirePackage[lithuanian]{babel}
+\selectlanguage{lithuanian}
 
 % fonts
 %\RequirePackage{fontspec}
@@ -71,7 +72,7 @@
 
 % various stuff
 \RequirePackage{underscore}
-\RequirePackage{microtype}
+%\RequirePackage{microtype}
 \RequirePackage[hyphens]{url}
 \RequirePackage[
   % hidelinks=true,
@@ -83,7 +84,7 @@
 
 %% lists
 %\RequirePackage{easylist}
-%\RequirePackage[inline]{enumitem}
+\RequirePackage[inline]{enumitem}
 %
 %% quotes
 %\RequirePackage{csquotes}
@@ -99,142 +100,70 @@
 %\RequirePackage{blindtext}
 
 % header
-%\usepackage{scrlayer-scrpage}
-%\clearscrheadfoot 
+\usepackage{scrlayer-scrpage}
+\clearscrheadfoot 
 
-%\newcommand{\myheader}{%
-%  \begin{minipage}[t]{\textwidth}
-%    \centering
-%    \large\textbf{PVM sąskaita faktūra} \\
-%    \normalsize{Serija \getproperty{invoice}{Series} nr. \getproperty{invoice}{Number}}
-%    \bigskip
-%    \smallskip
-%  \end{minipage}
-%  
-%  \begin{minipage}[t]{\textwidth}
-%    \small
-%    \begin{tabular}[b]{@{}p{3cm}p{5cm}@{}}
-%      \multicolumn{2}{@{}l}{
-%        \large{\textbf{\getproperty{seller}{Name}}}
-%      }
-%    \end{tabular}
-%    \hfill
-%    \begin{tabular}[b]{@{}p{2.8cm}p{5cm}@{}}
-%      \normalsize{Dokumento nr.} & \normalsize{\getproperty{invoice}{ID}}
-%    \end{tabular}
-%    
-%    \medskip
-%    
-%    \begin{tabular}[t]{@{}p{3cm}p{5cm}@{}}
-%      Registracijos adresas & \getproperty{seller}{Address} \\
-%      Telefonas             & \getproperty{seller}{Phone}   \\
-%      Įmonės kodas          & \getproperty{seller}{ID}      \\
-%      PVM mokėtojo kodas    & \getproperty{seller}{VAT}
-%    \end{tabular}
-%    \hfill
-%    \begin{tabular}[t]{@{}p{2.8cm}p{5cm}@{}}
-%      Data                & \getproperty{invoice}{Date}    \\
-%      Apmokėti iki        & \getproperty{invoice}{Due}     \\
-%      Bankas              & \getproperty{seller}{Bank}     \\
-%      Banko sąskaitos nr. & \getproperty{seller}{Account}
-%    \end{tabular}
-%    
-%    \par\nobreak\vspace{2mm}\rule{\textwidth}{0.4pt}\vspace{2mm}
-%    
-%    \begin{tabular}[t]{@{}p{3cm}p{5cm}@{}}
-%      Pirkėjas           & \getproperty{client}{Name}    \\
-%      Kodas              & \getproperty{client}{ID}      \\
-%      PVM mokėtojo kodas & \getproperty{client}{VAT}     \\
-%      Adresas            & \getproperty{client}{Address}
-%    \end{tabular}
-%    \hfill
-%    \begin{tabular}[t]{@{}p{2.8cm}p{5cm}@{}}
-%      Kasos aparato nr. & \getproperty{POS}{ID}     \\
-%      Kvito nr.         & \getproperty{POS}{Number}
-%    \end{tabular}
-%  \end{minipage}
-%}
 
 % footer
 \newcommand{\myfooter}{%
-  \scriptsize\textbf{\getproperty{organization}{name}}
+\getproperty{organization}{Banner}
+%\smallskip
+%  \scriptsize\textbf{\getproperty{organization}{name}}
   \(\cdot\)
-  \getproperty{organization}{Phone}
-  \(\cdot\)
+%  Tel: \getproperty{organization}{Phone}
+%  \(\cdot\)
   \getproperty{organization}{URI}
   \(\cdot\)
   \getproperty{organization}{Email}
   
-  \smallskip
-  \getproperty{organization}{Banner}
+  
+  
 }
 
-% invoice parties
+% agreement parties
 \newcommand{\agreementParties}{
 
-\begin{minipage}[t]{0.4\textwidth}
+\begin{minipage}[t]{0.45\textwidth}
   \vspace{1cm}
-  \hspace{1em}\small{\getproperty{organization}{name}}
-  \par\nobreak\vspace{-9pt}\rule{\textwidth}{0.4pt}
-  \getproperty{organization}{address}
-  Juridinio asmens kodas: \getproperty{organization}{ID}
-    
+  \textbf{\getproperty{organization}{name}}\\
+%  \par\nobreak\vspace{-9pt}\rule{\textwidth}{0.4pt}\\
+  \getproperty{organization}{address}\\
+  Juridinio asmens kodas: \getproperty{organization}{ID}\\
+  E-paštas: \getproperty{organization}{email}
 \end{minipage}
 \hfill
-\begin{minipage}[t]{0.4\textwidth}
+\begin{minipage}[t]{0.45\textwidth}
   \vspace{1cm}
-  \getproperty{member}{name}
-  Adresas: \getproperty{member}{address}
-  Tel: \getproperty{member}{phone}
-  E-paštas: \getproperty{member}{email}
-  
-  \hspace{1em}\small{}
-  \par\nobreak\vspace{-9pt}\rule{\textwidth}{0.4pt}\par
-  \centering\scriptsize{(pareigos, vardas, pavardė, parašas)}
+  \textbf{\getproperty{member}{Name}} \\  
+  \getproperty{member}{address} \\
+  Tel: \getproperty{member}{phone} \\
+  E-paštas: \getproperty{member}{email} \\
 \end{minipage}
 
+\begin{minipage}[t]{0.45\textwidth}
+  \vspace{1cm}
+  Atstovaujama \getproperty{representative}{position} \\
+  \vspace{1cm}
+  \getproperty{representative}{Name}    
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+  \vspace{2cm}
+  \par\nobreak\vspace{2pt}\rule{\textwidth}{0.4pt}\par
+  \centering\scriptsize{(vardas, pavardė, parašas)}
+\end{minipage}
+
+
 }
 
-\newcommand{\invoiceSum}{
-\multicolumn{2}{l}{} & \multicolumn{2}{|r|}{Suma be PVM}   & \getproperty{invoice}{Sum}  \\ \cline{3-5}}
-
-\newcommand{\invoiceVAT}{
-\multicolumn{2}{l}{} & \multicolumn{2}{|r|}{PVM \getproperty{invoice}{VATrate}\%}   & \getproperty{invoice}{VAT}  \\ \cline{3-5}
-}
 
 
-\newcommand{\invoiceTotal}{
-\multicolumn{2}{l}{} & \multicolumn{2}{|r|}{Mokėjimo suma} & \getproperty{invoice}{Total} \\ \cline{3-5}
-}
 
-\newcommand{\pos}[1]{
-\multicolumn{1}{|L{\WcI}}{#1}
-} 
-
-\newcommand{\units}[1]{
-\multicolumn{1}{|l}{#1}
-}
-
-\newcommand{\qtty}[1]{
-\multicolumn{1}{|l|}{#1}
-}
-
-\newcommand{\price}[1]{
-#1
-}
-
-\newcommand{\total}[1]{
-#1 \\ \hline
-}
 
 %\setkomafont{disposition}{\normalfont}
 %\setkomafont{pageheadfoot}{\normalfont}
 
 %\chead{\myheader}
-%\cfoot{\myfooter}
+\cfoot{\myfooter}
+\ifoot{\myfooter}
+\ofoot{\myfooter}
 %\rofoot{\small{\pagemark}}
-
-\RequirePackage{array}
-\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
-\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
-\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
