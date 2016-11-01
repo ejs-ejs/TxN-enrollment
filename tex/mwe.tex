@@ -13,7 +13,7 @@
 ]{scrartcl}
 
 
-
+\renewcommand*{\titlepagestyle}{scrheadings}
 \usepackage{agreement}
 
 
@@ -47,8 +47,8 @@
 
 \setproperty{member}{Name}{Jonas Jonaitis}
 \setproperty{member}{address}{Gatvė, namas, miestas}
-\setproperty{member}{phone}{<< +370 650 123456 >>}
-\setproperty{member}{email}{<< tikras@e.mailas >>}
+\setproperty{member}{phone}{ +370 650 123456}
+\setproperty{member}{email}{tikras@e.mailas}
 
 %------------------------------
 
@@ -63,7 +63,7 @@
 \begin{document}
 
 \pagestyle{scrheadings}
-
+\location{\getproperty{organization}{location}}
 
 
 %------------------------------
@@ -71,8 +71,6 @@
 
 
 \maketitle
-
-%\centering \date, \getproperty{organization}{location}}
 
 
 \textbf{\getproperty{organization}{name}} ir 

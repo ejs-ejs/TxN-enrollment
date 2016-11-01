@@ -13,7 +13,7 @@
 ]{scrartcl}
 
 
-
+\renewcommand*{\titlepagestyle}{scrheadings}
 \usepackage{agreement}
 
 
@@ -65,6 +65,7 @@
 \begin{document}
 
 \pagestyle{scrheadings}
+\location{\getproperty{organization}{location}}
 
 
 
@@ -74,7 +75,6 @@
 
 \maketitle
 
-%\centering \date, \getproperty{organization}{location}}
 
 
 \textbf{\getproperty{organization}{name}} ir 
@@ -109,7 +109,7 @@ neįmanoma. Jei Technariumo dirbtuvių veikla dėl kokių nors priežasčių neb
 
 
 \agreementParties
-\myfooter
+%\myfooter
 
 %------------------------------
 
